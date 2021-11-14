@@ -6,6 +6,7 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
   build:
@@ -33,6 +34,8 @@ jobs:
     needs:
       - build
     steps:
+      - name: Check-out source
+        uses: actions/checkout@v2
       - name: download site
         uses: actions/download-artifact@v2.0.10
         with:
