@@ -12,7 +12,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - run: scp
       - name: check-out source
         uses: actions/checkout@v2
       - name: setup environemnt
