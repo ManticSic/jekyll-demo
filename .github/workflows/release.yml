@@ -40,3 +40,11 @@ jobs:
         with:
           name: site
           path: ${{ github.workspace }}/publish
+      - name: Publish to gh-pages
+        uses: JamesIves/github-pages-deploy-action@4.1.4
+        with:
+          branch: gh-pages
+          folder: ${{ github.workspace }}/publish
+          clean: true
+          clean-exclude: |
+            CNAME
